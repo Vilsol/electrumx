@@ -119,7 +119,7 @@ class History(object):
     def flush(self):
         self.flush_count += 1
         self.logger.info(f'flush count: {self.flush_count:,d}')
-        flush_id = pack('>H', self.flush_count)
+        flush_id = pack('>HHHH', self.flush_count)
         unflushed = self.unflushed
 
         with self.db.write_batch() as batch:
