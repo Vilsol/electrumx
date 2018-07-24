@@ -118,6 +118,7 @@ class History(object):
 
     def flush(self):
         self.flush_count += 1
+        print(self.flush_count)
         flush_id = pack('>H', self.flush_count)
         unflushed = self.unflushed
 
